@@ -1,31 +1,113 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset some default browser styles */
+* {
   margin: 0;
   padding: 0;
-  background: #f2f2f2;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f4f8;
   color: #333;
+  line-height: 1.6;
 }
 
+/* Header styling */
 header {
-  background: #4CAF50;
-  color: white;
-  padding: 2rem;
+  background-color: #003d33;
+  padding: 30px 20px;
   text-align: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-section {
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
+header h1 {
+  font-size: 28px;
+  letter-spacing: 1px;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: white;
+/* Navigation tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  background-color: #e0f2f1;
+  border-bottom: 2px solid #004d40;
+  flex-wrap: wrap;
 }
+
+.tab {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #004d40;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.tab:hover,
+.tab.active {
+  background-color: #b2dfdb;
+}
+
+/* Content box */
+.tab-content {
+  display: none;
+  max-width: 850px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Section headings */
+.tab-content h2 {
+  font-size: 22px;
+  color: #004d40;
+  border-bottom: 2px solid #004d40;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+/* Paragraph and list formatting */
+.tab-content p {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.tab-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.tab-content li {
+  margin-bottom: 10px;
+}
+
+/* Links */
 a {
-  color: #4CAF50;
+  color: #00695c;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .tab {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .tab-content {
+    padding: 20px;
+  }
 }
