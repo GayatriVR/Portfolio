@@ -10,6 +10,9 @@
       margin: 0;
       background: #f5f5f5;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
     header {
@@ -24,21 +27,30 @@
       margin: 0;
     }
 
+    .container {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
     .tabs {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      width: 200px;
       background-color: #e0f2f1;
-      border-bottom: 2px solid #004d40;
-      flex-wrap: wrap;
+      border-right: 2px solid #004d40;
+      padding-top: 10px;
     }
 
     .tab {
-      padding: 10px 20px;
+      padding: 15px 20px;
       cursor: pointer;
       font-weight: bold;
       color: #004d40;
       border: none;
       background: none;
+      text-align: left;
+      width: 100%;
     }
 
     .tab:hover,
@@ -46,12 +58,17 @@
       background-color: #b2dfdb;
     }
 
+    .content-area {
+      flex: 1;
+      padding: 20px;
+      background: white;
+      overflow-y: auto;
+    }
+
     .tab-content {
       display: none;
       max-width: 800px;
       margin: auto;
-      padding: 20px;
-      background: white;
     }
 
     .tab-content.active {
@@ -76,6 +93,28 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .tabs {
+        flex-direction: row;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #004d40;
+      }
+
+      .tab {
+        flex: 1;
+        text-align: center;
+      }
+
+      .content-area {
+        padding: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -84,58 +123,68 @@
   <h1>GAYATRI VARMA REVI VARMA</h1>
 </header>
 
-<div class="tabs">
-  <button class="tab active" onclick="openTab(event, 'profile')">Profile</button>
-  <button class="tab" onclick="openTab(event, 'education')">Education</button>
-  <button class="tab" onclick="openTab(event, 'career')">Career</button>
-  <button class="tab" onclick="openTab(event, 'contact')">Contact Info</button>
-  <button class="tab" onclick="openTab(event, 'linkedin')">LinkedIn</button>
-</div>
+<div class="container">
+  <div class="tabs">
+    <button class="tab active" onclick="openTab(event, 'profile')">Profile</button>
+    <button class="tab" onclick="openTab(event, 'education')">Education</button>
+    <button class="tab" onclick="openTab(event, 'career')">Career</button>
+    <button class="tab" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab" onclick="openTab(event, 'contact')">Contact Info</button>
+    <button class="tab" onclick="openTab(event, 'linkedin')">LinkedIn</button>
+  </div>
 
-<div id="profile" class="tab-content active">
-  <h2>Profile</h2>
-  <p>
-    I am an accomplished software engineer with 8 years of experience at Cognizant. I have spearheaded multiple projects and enhancements, handled business requirements and data gathering, performed user acceptance testing with 95% implementation success, reduced 60% manual processing through automation, and demonstrated a proven track record of delivering innovative solutions and driving operational efficiency through creative and data-driven approaches.
-  </p>
-</div>
+  <div class="content-area">
+    <div id="profile" class="tab-content active">
+      <h2>Profile</h2>
+      <p>
+        I am an accomplished software engineer with 8 years of experience at Cognizant. I have spearheaded multiple projects and enhancements, handled business requirements and data gathering, performed user acceptance testing with 95% implementation success, reduced 60% manual processing through automation, and demonstrated a proven track record of delivering innovative solutions and driving operational efficiency through creative and data-driven approaches.
+      </p>
+    </div>
 
-<div id="education" class="tab-content">
-  <h2>Education</h2>
-  <p><strong>Master’s in Business Analytics</strong> — University of Western Australia, Crawley, WA (July 2024 - Present)</p>
-  <p>Machine learning using R, statistical analysis in SPSS, hands-on experience in Python & SQL</p>
-  <p><strong>Bachelor of Technology (BTech), Electronics & Communication Engineering</strong> — Cochin University of Science and Technology, Kerala, India (June 2012 – June 2016)</p>
-</div>
+    <div id="education" class="tab-content">
+      <h2>Education</h2>
+      <p><strong>Master’s in Business Analytics</strong> — University of Western Australia, Crawley, WA (July 2024 - Present)</p>
+      <p>Machine learning using R, statistical analysis in SPSS, hands-on experience in Python & SQL</p>
+      <p><strong>Bachelor of Technology (BTech), Electronics & Communication Engineering</strong> — Cochin University of Science and Technology, Kerala, India (June 2012 – June 2016)</p>
+    </div>
 
-<div id="career" class="tab-content">
-  <h2>Career</h2>
-  <h3>Consumer Credit Legal Services (CCLSWA)</h3>
-  <p>February 2025 – Present</p>
-  <ul>
-    <li>Process Officer (Data) — June Present</li>
-    <li>IT & Data Intern — February 2025 – June 2025</li>
-  </ul>
-  <h3>Cognizant Technology Solutions</h3>
-  <p>June 2016 – June 2024 (8 years)</p>
-  <ul>
-    <li>Senior Associate — September 2022 – June 2024</li>
-    <li>Associate — October 2019 – September 2022</li>
-    <li>Programmer Analyst — June 2016 – October 2019</li>
-  </ul>
-</div>
+    <div id="career" class="tab-content">
+      <h2>Career</h2>
+      <h3>Consumer Credit Legal Services (CCLSWA)</h3>
+      <p>February 2025 – Present</p>
+      <ul>
+        <li>Process Officer (Data) — June Present</li>
+        <li>IT & Data Intern — February 2025 – June 2025</li>
+      </ul>
+      <h3>Cognizant Technology Solutions</h3>
+      <p>June 2016 – June 2024 (8 years)</p>
+      <ul>
+        <li>Senior Associate — September 2022 – June 2024</li>
+        <li>Associate — October 2019 – September 2022</li>
+        <li>Programmer Analyst — June 2016 – October 2019</li>
+      </ul>
+    </div>
 
-<div id="contact" class="tab-content">
-  <h2>Contact Info</h2>
-  <p>Email: <a href="mailto:gayatrivarmar@gmail.com">gayatrivarmar@gmail.com</a></p>
-  <p>Phone: 0425 100 100</p>
-</div>
+    <div id="projects" class="tab-content">
+      <h2>Projects</h2>
+      <p>Project details will be added soon.</p>
+    </div>
 
-<div id="linkedin" class="tab-content">
-  <h2>LinkedIn</h2>
-  <p>
-    <a href="https://www.linkedin.com/in/gayatri-varma-r" target="_blank">
-      linkedin.com/in/gayatri-varma-r
-    </a>
-  </p>
+    <div id="contact" class="tab-content">
+      <h2>Contact Info</h2>
+      <p>Email: <a href="mailto:gayatrivarmar@gmail.com">gayatrivarmar@gmail.com</a></p>
+      <p>Phone: 0425 100 100</p>
+    </div>
+
+    <div id="linkedin" class="tab-content">
+      <h2>LinkedIn</h2>
+      <p>
+        <a href="https://www.linkedin.com/in/gayatri-varma-r" target="_blank">
+          linkedin.com/in/gayatri-varma-r
+        </a>
+      </p>
+    </div>
+  </div>
 </div>
 
 <script>
