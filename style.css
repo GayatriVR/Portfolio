@@ -14,7 +14,7 @@ body {
 
 /* Header styling */
 header {
-  background-color: #4A148C; /* Deep Purple */
+  background-color: #003d33;
   padding: 30px 20px;
   text-align: center;
   color: white;
@@ -30,15 +30,15 @@ header h1 {
 .tabs {
   display: flex;
   justify-content: center;
-  background-color: #ede7f6; /* Light lavender */
-  border-bottom: 2px solid #4A148C;
+  background-color: #e0f2f1;
+  border-bottom: 2px solid #004d40;
   flex-wrap: wrap;
 }
 
 .tab {
   padding: 12px 20px;
   font-size: 16px;
-  color: #4A148C;
+  color: #004d40;
   background: none;
   border: none;
   cursor: pointer;
@@ -48,8 +48,7 @@ header h1 {
 
 .tab:hover,
 .tab.active {
-  background-color: #d1c4e9; /* Muted lavender for hover/active */
-  color: #311B92; /* Darker purple for emphasis */
+  background-color: #b2dfdb;
 }
 
 /* Content box */
@@ -70,8 +69,8 @@ header h1 {
 /* Section headings */
 .tab-content h2 {
   font-size: 22px;
-  color: #4A148C;
-  border-bottom: 2px solid #4A148C;
+  color: #004d40;
+  border-bottom: 2px solid #004d40;
   padding-bottom: 6px;
   margin-bottom: 15px;
 }
@@ -93,13 +92,12 @@ header h1 {
 
 /* Links */
 a {
-  color: #6A1B9A; /* Medium purple */
+  color: #00695c;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #311B92; /* Slightly darker hover effect */
 }
 
 /* Responsive adjustments */
