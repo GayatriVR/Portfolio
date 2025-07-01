@@ -7,18 +7,18 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f3f0f9;
-  color: #2e2e2e;
+  background-color: #f2f4f8;
+  color: #333;
   line-height: 1.6;
 }
 
 /* Header styling */
 header {
-  background-color: #4A148C; /* Deep purple */
+  background-color: #4A148C; /* Deep Purple */
   padding: 30px 20px;
   text-align: center;
   color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
@@ -26,58 +26,41 @@ header h1 {
   letter-spacing: 1px;
 }
 
-/* Layout wrapper */
-.container {
-  display: flex;
-  height: calc(100vh - 90px); /* Full height minus header */
-}
-
-/* Vertical tabs */
+/* Navigation tabs */
 .tabs {
-  width: 220px;
-  background-color: #ede7f6; /* Light lavender */
-  border-right: 2px solid #4A148C;
   display: flex;
-  flex-direction: column;
-  padding-top: 10px;
+  justify-content: center;
+  background-color: #ede7f6; /* Light lavender */
+  border-bottom: 2px solid #4A148C;
+  flex-wrap: wrap;
 }
 
 .tab {
-  padding: 15px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   color: #4A148C;
   background: none;
   border: none;
-  text-align: left;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s ease;
-  width: 100%;
+  transition: background-color 0.2s ease;
 }
 
 .tab:hover,
 .tab.active {
-  background-color: #d1c4e9; /* Light purple for active/hover */
-  color: #311B92; /* Slightly darker text */
-}
-
-/* Main content area */
-.content-area {
-  flex: 1;
-  padding: 30px;
-  overflow-y: auto;
-  background-color: #ffffff;
+  background-color: #d1c4e9; /* Muted lavender for hover/active */
+  color: #311B92; /* Darker purple for emphasis */
 }
 
 /* Content box */
 .tab-content {
   display: none;
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 850px;
+  margin: 30px auto;
+  background-color: white;
   padding: 30px;
-  background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .tab-content.active {
@@ -93,7 +76,7 @@ header h1 {
   margin-bottom: 15px;
 }
 
-/* Text formatting */
+/* Paragraph and list formatting */
 .tab-content p {
   margin-bottom: 15px;
   font-size: 16px;
@@ -110,37 +93,23 @@ header h1 {
 
 /* Links */
 a {
-  color: #6A1B9A;
+  color: #6A1B9A; /* Medium purple */
   text-decoration: none;
 }
 
 a:hover {
-  color: #311B92;
   text-decoration: underline;
+  color: #311B92; /* Slightly darker hover effect */
 }
 
-/* Responsive layout */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .tabs {
-    flex-direction: row;
-    width: 100%;
-    border-right: none;
-    border-bottom: 2px solid #4A148C;
-    overflow-x: auto;
-  }
-
   .tab {
-    text-align: center;
-    flex: 1;
+    padding: 10px;
     font-size: 14px;
-    padding: 12px 10px;
   }
 
-  .content-area {
+  .tab-content {
     padding: 20px;
   }
 }
